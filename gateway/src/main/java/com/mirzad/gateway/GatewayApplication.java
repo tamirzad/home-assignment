@@ -1,4 +1,4 @@
-package com.safalifter.gateway;
+package com.mirzad.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

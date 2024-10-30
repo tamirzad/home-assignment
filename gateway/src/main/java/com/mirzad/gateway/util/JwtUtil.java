@@ -1,4 +1,4 @@
-package com.safalifter.gateway.util;
+package com.mirzad.gateway.util;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;

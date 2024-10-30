@@ -1,6 +1,6 @@
-package com.safalifter.gateway.config;
+package com.mirzad.gateway.config;
 
-import com.safalifter.gateway.filter.JwtAuthenticationFilter;
+import com.mirzad.gateway.filter.JwtAuthenticationFilter;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;

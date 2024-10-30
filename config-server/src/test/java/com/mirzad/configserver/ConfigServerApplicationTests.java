@@ -1,4 +1,4 @@
-package com.safalifter.configserver;
+package com.mirzad.configserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

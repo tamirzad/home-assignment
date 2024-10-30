@@ -1,4 +1,4 @@
-package com.safalifter.eurekaserver;
+package com.mirzad.eurekaserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
