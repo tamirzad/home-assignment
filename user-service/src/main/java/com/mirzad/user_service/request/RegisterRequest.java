@@ -1,6 +1,6 @@
 package com.mirzad.user_service.request;
 
-import com.mirzad.user_service.model.UserRole;
+import com.mirzad.common.model.UserRole;
 import lombok.Data;
 
 import javax.validation.constraints.*;

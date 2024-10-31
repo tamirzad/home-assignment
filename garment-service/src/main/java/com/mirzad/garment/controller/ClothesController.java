@@ -15,6 +15,12 @@ public class ClothesController {
 
     private final GarmentRepository garmentRepository;
 
+    /**
+     * Getting list of garments. Can be filtered by type and size
+     * @param type - Type as param
+     * @param size - Size as param
+     * @return list of garments
+     */
     @GetMapping
     public List<Garment> listGarments(
             @RequestParam(required = false) GarmentType type,
@@ -22,6 +28,11 @@ public class ClothesController {
         return garmentRepository.searchByTypeAndSize(type, size);
     }
 
+    /**
+     * Details for garment
+     * @param id - id of garment
+     * @return detailed garment
+     */
     @GetMapping("/{id}")
     public Garment getGarmentById(@PathVariable Long id) {
         return garmentRepository.findById(id).orElse(null); // or throw an exception

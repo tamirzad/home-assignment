@@ -1,6 +1,7 @@
 package com.mirzad.garment.model;
 
 
+import com.mirzad.common.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

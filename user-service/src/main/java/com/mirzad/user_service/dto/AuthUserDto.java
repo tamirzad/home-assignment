@@ -1,6 +1,6 @@
 package com.mirzad.user_service.dto;
 
-import com.mirzad.user_service.model.UserRole;
+import com.mirzad.common.model.UserRole;
 import lombok.Data;
 
 @Data

@@ -12,6 +12,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+
+/**
+ * CustomErrorDecoder is class to resolve errors and returns generic response
+ * so it will be same for all errors
+ */
 public class CustomErrorDecoder implements ErrorDecoder {
     private final ObjectMapper mapper = new ObjectMapper();
 
