@@ -13,24 +13,24 @@ CREATE TYPE garment_type AS ENUM ('SHIRT', 'PANTS', 'DRESS', 'OUTERWEAR');
 -- Create GarmentSize enum type (you can adjust values based on your actual garment sizes)
 CREATE TYPE garment_size AS ENUM ('XS','S', 'M', 'L', 'XL','XXL', 'XXXL');
 
--- Create User table
+-- Create User Table
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    username VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    full_name VARCHAR(255) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    full_name VARCHAR(100),
     address VARCHAR(255),
-    publisher BOOLEAN DEFAULT FALSE,
-    role user_role NOT NULL
+    publisher BOOLEAN,
+    role VARCHAR(10) CHECK (role IN ('admin', 'user'))
 );
 
--- Create Garment table
+-- Create Garment Table
 CREATE TABLE garments (
     id SERIAL PRIMARY KEY,
-    type garment_type NOT NULL,
+    type VARCHAR(20) NOT NULL CHECK (type IN ('SHIRT', 'PANTS', 'T_SHIRT', 'SHORTS', 'BLOUSE', 'COAT', 'JACKET', 'SHOES')),
     description TEXT,
-    publisher_id BIGINT,
-    price DECIMAL(10, 2) NOT NULL,
-    size garment_size NOT NULL,
-    FOREIGN KEY (publisher_id) REFERENCES users(id) ON DELETE SET NULL
+    publisher_id BIGINT REFERENCES users(id) ON DELETE CASCADE,
+    price DECIMAL(10, 2),
+    size VARCHAR(10) CHECK (size IN ('XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'))
 );
+

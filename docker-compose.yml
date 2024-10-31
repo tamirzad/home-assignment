@@ -9,6 +9,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: microservice
     volumes:
+        - ./init/01-create-db.sql:/docker-entrypoint-initdb.d/01-create-db.sql
         - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"

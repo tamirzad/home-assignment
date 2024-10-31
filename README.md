@@ -29,7 +29,7 @@ that aren't protected.</li>
 <b>2 )</b> Go to the project's home directory :  `cd home-assignment`
 
 <b>3 )</b> Run docker compose <b>`docker compose up`</b></b>
-
+        
 <b>4 )</b> Run <b>Eureka Server</b>
 
 <b>5 )</b> Run <b>Gateway</b>
