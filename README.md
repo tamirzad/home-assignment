@@ -28,7 +28,7 @@ that aren't protected.</li>
 
 <b>2 )</b> Go to the project's home directory :  `cd home-assignment`
 
-<b>3 )</b> Run docker compose <b>`docker compose up`</b></b>
+<b>3 )</b> Run docker compose <b>`docker compose up`</b> Execute sql file to create database (In next version will be added in docker file)</b>
         
 <b>4 )</b> Run <b>Eureka Server</b>
 
@@ -41,3 +41,91 @@ that aren't protected.</li>
 <b>8 )</b> Run other services (<b>auth-service</b>, <b>user-service</b>, <b>garment-service</b>)
 
 <b>9 )</b> For swagger ui localhost:8080/v1/{service-name}/swagger-ui/index.html</b>
+
+
+## Valid Request Body
+
+##### <a id="register"> Register for User
+
+``` 
+    http://localhost:8080/v1/auth/register
+    METHOD: POST
+    
+        {
+          "username": "string",
+          "password": "string",
+          "fullName": "string",
+          "address": "string",
+          "publisher": boolean,
+        }
+```
+
+##### <a id="login"> Login for User and Admin
+
+```
+      http://localhost:8080/v1/auth/login
+      METHOD:POST
+    
+       {
+         "username": "string",
+         "password": "string"
+       }
+```
+
+## Garment service
+
+##### <a id="publish"> Publish garment
+
+``` 
+    http://localhost:8080/v1/garment
+    Method: POST
+    Authentication: Bearer Token
+    
+        {
+          "type": "string",
+          "description": "string",
+          "price": double,
+          "size": "string",
+        }
+```
+
+##### <a id="delete"> Delete garment
+
+```
+      http://localhost:8080/v1/garment/{garmentId}
+      METHOD: DELETE
+      Authentication: Bearer Token
+```
+
+##### <a id="put"> Update garment
+
+```
+      http://localhost:8080/v1/garment/{garmentId}
+      METHOD: PUT
+      Authentication: Bearer Token
+      
+      {
+          "type": "string",
+          "description": "string",
+          "price": double,
+          "size": "string",
+        }
+```
+
+## Clothes service
+
+##### <a id="getClothes"> Get all garments
+
+```
+      http://localhost:8080/v1/clothes
+      METHOD: GET
+      
+```
+
+##### <a id="getClothes"> Get detailed garment
+
+```
+      http://localhost:8080/v1/clothes/{garmentId}
+      METHOD: GET
+      
+```
