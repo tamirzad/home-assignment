@@ -5,6 +5,15 @@ spring:
   application:
     name: api-gateway
   cloud:
+    routes:
+      - id: auth-service
+        uri: http://localhost:8090  # Load balanced URI
+        predicates:
+          - Path=/auth/**  # Adjust this
+      - id: user-service
+        uri: http://localhost:8091  # Load balanced URI
+        predicates:
+          - Path=/user/**  # Adjust this
     gateway:
       discovery:
         locator:

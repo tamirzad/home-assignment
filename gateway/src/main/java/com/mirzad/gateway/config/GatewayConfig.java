@@ -19,9 +19,9 @@ public class GatewayConfig {
         return builder.routes()
                 .route("user-service", r -> r.path("/v1/user/**")
                         .filters(f -> f.filter(filter))
-                        .uri("lb://user-service"))
+                        .uri("http://localhost:8091"))
 
                 .route("auth-service", r -> r.path("/v1/auth/**")
-                        .uri("lb://auth-service")).build();
+                        .uri("http://localhost:8090")).build();
     }
 }
