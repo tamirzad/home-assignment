@@ -1,11 +1,11 @@
 package com.mirzad.user_service.model;
 
-import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 
@@ -18,19 +18,26 @@ import java.util.List;
 @AllArgsConstructor
 public class User implements UserDetails {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(name = "username")
     private String username;
     @Column(name = "password")
     private String password;
+    @Column(name = "full_name")
+    private String fullName;
+    @Column(name = "address")
+    private String address;
     @Column(name = "publisher")
-    private Publisher publisher;
+    private Boolean publisher;
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
     public User(String username, String password, UserRole role) {
         this.username = username;
         this.password = password;
-        this.role = role;
+        this.role = UserRole.USER;
     }
 
     @Override

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name = "user-service", path = "/v1/user")
 public interface UserServiceClient {
-    @PostMapping()
+    @PostMapping("/save")
     ResponseEntity<RegisterDto> save(@RequestBody RegisterRequest request);
 
     @GetMapping("/{username}")

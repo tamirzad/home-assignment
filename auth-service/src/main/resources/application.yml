@@ -1,7 +1,21 @@
 spring:
   application:
-    name: auth
+    name: auth-service
+  config:
+    import: configserver:http://localhost:8888/
 security:
   jwt:
     token:
       secret-key: "webz"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: 8090
+application:
+  title: Auth Service
