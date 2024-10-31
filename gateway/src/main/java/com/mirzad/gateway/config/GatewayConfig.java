@@ -24,6 +24,10 @@ public class GatewayConfig {
                 .route("garment-service", r -> r.path("/v1/clothes/**")
                         .uri("http://localhost:8092"))
 
+                .route("garment-service", r -> r.path("/v1/garment/**")
+                        .filters(f -> f.filter(filter))
+                        .uri("http://localhost:8092"))
+
                 .route("auth-service", r -> r.path("/v1/auth/**")
                         .uri("http://localhost:8090")).build();
     }
