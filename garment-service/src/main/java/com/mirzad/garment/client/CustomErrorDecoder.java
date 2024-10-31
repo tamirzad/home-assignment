@@ -1,8 +1,8 @@
-package com.mirzad.auth.client;
+package com.mirzad.garment.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mirzad.auth.exc.GenericErrorResponse;
-import com.mirzad.auth.exc.ValidationException;
+import com.mirzad.garment.exc.GenericErrorResponse;
+import com.mirzad.garment.exc.ValidationException;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 import org.apache.commons.io.IOUtils;
@@ -12,11 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
-
-/**
- * CustomErrorDecoder is class to resolve errors and returns generic response
- * so it will be same for all errors
- */
 public class CustomErrorDecoder implements ErrorDecoder {
     private final ObjectMapper mapper = new ObjectMapper();
 

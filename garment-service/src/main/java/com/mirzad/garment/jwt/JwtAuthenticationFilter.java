@@ -1,4 +1,4 @@
-package com.mirzad.user_service.jwt;
+package com.mirzad.garment.jwt;
 
 import com.mirzad.common.utils.JwtUtil;
 import io.jsonwebtoken.Claims;

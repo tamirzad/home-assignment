@@ -18,12 +18,21 @@ public class UserController {
     private final UserService userService;
     private final ModelMapper modelMapper;
 
+    /**
+     * Endpoing for creating user
+     * @param request - user we want to create
+     * @return - created user
+     */
     @PostMapping("/save")
     public ResponseEntity<UserDto> save(@Valid @RequestBody RegisterRequest request) {
         return ResponseEntity.ok(modelMapper.map(userService.saveUser(request), UserDto.class));
     }
 
-
+    /**
+     * Get user by its username
+     * @param username - username of user
+     * @return user details
+     */
     @GetMapping("/{username}")
     public ResponseEntity<AuthUserDto> getUserByUsername(@PathVariable String username) {
         return ResponseEntity.ok(modelMapper.map(userService.getUserByUsername(username), AuthUserDto.class));

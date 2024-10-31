@@ -1,12 +1,13 @@
 package com.mirzad.garment.model;
 
 
-import jakarta.persistence.*;
+import com.mirzad.common.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import com.mirzad.garment.model.Publisher;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "garments")
@@ -18,13 +19,15 @@ public class Garment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "type")
+    @Enumerated(EnumType.STRING)
     private GarmentType type;
     @Column(name = "description")
     private String description;
-    private Publisher publisherId;
+    @ManyToOne
+    @JoinColumn(name = "publisher_id", referencedColumnName = "id" )
+    private User publisherId;
     @Column(name = "price")
     private Double price;
-    @Column(name = "size")
+    @Enumerated(EnumType.STRING)
     private GarmentSize size;
 }

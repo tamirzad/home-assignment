@@ -1,4 +1,4 @@
-package com.mirzad.user_service.model;
+package com.mirzad.common.model;
 
 public enum UserRole {
     ADMIN("admin"),

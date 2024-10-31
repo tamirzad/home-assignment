@@ -13,7 +13,11 @@ spring:
       - id: user-service
         uri: http://localhost:8091  # Load balanced URI
         predicates:
-          - Path=/user/**  # Adjust this
+          - Path=/user/**
+      - id: garment-service
+        uri: http://localhost:8092  # Load balanced URI
+        predicates:
+          - Path=/clothes/**  # Adjust this
     gateway:
       discovery:
         locator:
